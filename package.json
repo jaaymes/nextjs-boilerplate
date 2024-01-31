@@ -6,16 +6,29 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "clean": "rm -rf .next && rm -rf node_modules",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "next lint && stylelint --allow-empty-input \"**/*.{css,scss}\"",
+    "test": "jest",
+    "test:e2e": "cucumber-js test",
+    "test:mutate": "stryker run"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": ["eslint --fix", "prettier --write"],
+    "src/**/*.{css,scss}": [
+      "stylelint --allow-empty-input \"**/*.{css,scss}\"",
+      "prettier --write"
+    ]
   },
   "dependencies": {
+    "inversify": "^6.0.2",
     "next": "14.1.0",
+    "next-auth": "^4.24.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.0.1"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.3.1",
