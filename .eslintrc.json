@@ -8,6 +8,7 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "testing-library", "jest-dom"],
   "rules": {
+    "react/no-unescaped-entities": "off",
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
     "import/extensions": "off",
